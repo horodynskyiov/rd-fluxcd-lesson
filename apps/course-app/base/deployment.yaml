@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: course-app
+  labels:
+    app: course-app
+spec:
+  replicas: 1   # буде переписано в overlays
+  selector:
+    matchLabels:
+      app: course-app
+  template:
+    metadata:
+      labels:
+        app: course-app
+    spec:
+      containers:
+        - name: course-app
+          image: horodynskyiov/course-app:lesson-11
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: DRAGONFLY_HOST
+              value: "dragonfly"
+            - name: DRAGONFLY_PORT
+              value: "6379"

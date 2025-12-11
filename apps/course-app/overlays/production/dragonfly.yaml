@@ -1,0 +1,16 @@
+apiVersion: dragonflydb.io/v1alpha1
+kind: Dragonfly
+metadata:
+  name: dragonfly
+  namespace: production
+spec:
+  # 2 інстанси загалом: 1 master + 1 replica
+  replicas: 2
+  image: docker.dragonflydb.io/dragonflydb/dragonfly
+  resources:
+    requests:
+      cpu: 200m
+      memory: 256Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
