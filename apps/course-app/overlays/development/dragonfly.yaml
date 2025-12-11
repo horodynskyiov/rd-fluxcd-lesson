@@ -4,13 +4,12 @@ metadata:
   name: dragonfly
   namespace: development
 spec:
-  # Replicas — загальна кількість інстансів, включно з master
   replicas: 1
   image: docker.dragonflydb.io/dragonflydb/dragonfly
   resources:
     requests:
-      cpu: 100m
-      memory: 128Mi
+      cpu: 200m
+      memory: 256Mi
     limits:
       cpu: 500m
-      memory: 256Mi
+      memory: 512Mi
