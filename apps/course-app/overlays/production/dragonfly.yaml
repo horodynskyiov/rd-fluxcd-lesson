@@ -4,7 +4,6 @@ metadata:
   name: dragonfly
   namespace: production
 spec:
-  # 2 інстанси загалом: 1 master + 1 replica
   replicas: 2
   image: docker.dragonflydb.io/dragonflydb/dragonfly
   resources:
